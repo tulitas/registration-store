@@ -22,7 +22,13 @@ public class RegistrationResource {
     @Produces(MediaType.APPLICATION_JSON)
     public void register(@Valid @NotNull RegistrationDTO registration) {
         var name = registration.name();
+        var surname = registration.surname();
+        var email = registration.email();
+
         LOG.debug("registration for {}", name);
-        registrationService.register(registration.name());
+        LOG.debug("registration for {}", surname);
+        LOG.debug("registration for {}", email);
+
+        registrationService.register(registration.name(), registration.surname(), registration.email());
     }
 }
