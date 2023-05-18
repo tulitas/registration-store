@@ -17,12 +17,12 @@ public class UsersResource {
     private static final Logger LOG = LoggerFactory.getLogger(UsersResource.class);
 
     @Inject
-    RegistrationService registrationClient;
+    RegistrationService service;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<RegistrationEntity> getUsers() {
         LOG.debug("HELLLO");
-        return registrationClient.getAllRegistrations();
+        return service.getAllRegistrations();
     }
 }
