@@ -3,13 +3,12 @@ package org.acme;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import jakarta.ws.rs.Consumes;
-import jakarta.ws.rs.POST;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.List;
 
 @Path("/registration")
 public class RegistrationResource {
@@ -30,5 +29,16 @@ public class RegistrationResource {
         LOG.debug("registration for {}", email);
 
         registrationService.register(registration.name(), registration.surname(), registration.email());
+    }
+
+    @GET
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<RegistrationEntity> getUsers() {
+        System.out.println("AAAAAAAAAAAAAAAAAAAAAA");
+        LOG.debug("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+        LOG.debug(String.valueOf(registrationService.getAllRegistrations()));
+
+        return registrationService.getAllRegistrations();
     }
 }

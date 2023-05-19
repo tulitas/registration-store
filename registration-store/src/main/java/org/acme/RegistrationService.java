@@ -18,7 +18,7 @@ public class RegistrationService {
         var reg = new RegistrationEntity();
         reg.setName(name);
         reg.setSurname(surname);
-        reg.setName(email);
+        reg.setEmail(email);
         em.persist(reg);
     }
 
