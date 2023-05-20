@@ -1,4 +1,4 @@
-package org.acme;
+package org.acme.users;
 
 public class Users {
     private String name;

@@ -1,4 +1,4 @@
-package org.acme;
+package org.acme.registration;
 
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;
@@ -35,10 +35,6 @@ public class RegistrationResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public List<RegistrationEntity> getUsers() {
-        System.out.println("AAAAAAAAAAAAAAAAAAAAAA");
-        LOG.debug("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB");
-        LOG.debug(String.valueOf(registrationService.getAllRegistrations()));
-
-        return registrationService.getAllRegistrations();
+         return registrationService.getAllRegistrations();
     }
 }
