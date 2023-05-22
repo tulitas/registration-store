@@ -19,6 +19,9 @@ public record RegistrationDTO(
 @NotNull
 @Length(min = 3, max = 20)
         String email
+//        ,
+//
+//boolean selectedUser
                 ) {
 
                 }
